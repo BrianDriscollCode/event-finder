@@ -2,7 +2,7 @@ import React from 'react'
 
 class SearchBar extends React.Component {
 
-    state = { term: "searchbar" } 
+    state = { term: "concert" } 
 
     updateTerm(newTerm) {
 

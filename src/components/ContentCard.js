@@ -1,26 +1,33 @@
 import React from 'react'
 
-class ContentCard extends React.Component {
+const ContentCard = ( { id, name, info, images } ) => {
 
+    return (
 
-    state = { imageLink: '' }
+        <div key={ id }> 
 
-    render() {
+            <h2> { name } </h2> 
+            {
+                images.map((image) => {
 
-        return (
+                    if (image.ratio == '3_2' 
+                        && image.height < 500 
+                        && image.height > 250) 
+                    {
+                        return <img src={image.url} /> 
+                    }
+                    
 
-            <div>
+                })
+            }
+            <p> { info } </p>
+            <hr />
 
-                <img src={ this.state.imageLink } />
-                <h1> This is a content card </h1> 
-                <p> This is a description of the content card </p> 
+        </div>
 
-            </div> 
+    )
+    
 
-        )
-
-    }
-
-}   
+}
 
 export default ContentCard

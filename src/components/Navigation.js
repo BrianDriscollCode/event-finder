@@ -8,7 +8,7 @@ const Navigation = () => {
 
             <div>
 
-                HomeSearchable
+                Concert Finder
 
             </div> 
 

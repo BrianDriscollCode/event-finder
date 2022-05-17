@@ -1,31 +1,22 @@
 import React from 'react'
 import ContentCard from './ContentCard'
 
-class Content extends React.Component {
+const Content = ( { events } ) => {
 
-    state = { events: [] }
+    let renderedContent = ''
 
 
-    updateEvents = (props) => {
+    renderedContent = events.map((event) => {
 
-        console.log(this.state.events)
-        console.log(props.events)
+        return <ContentCard id={event.id} name={event.name} info={event.info} images={event.images} />
+            
+    })
 
-    }
+    console.log(renderedContent[0]);
 
-    render() {
 
-        return (
 
-            <div onClick={this.updateEvents}> 
-
-                <ContentCard />
-
-            </div>
-
-        )
-
-    }
+    return <div> {renderedContent} </div>
 
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Navigation from './components/Navigation'
 import Banner from './components/Banner'
 import Content from './components/Content'
-import Hotel_API from './apis/Hotel_API'
+import Event_API from './apis/Event_API'
 
 class App extends React.Component {
 
@@ -13,16 +13,20 @@ class App extends React.Component {
 
     onTermSubmit = async (passedTerm) => {
 
-        console.log(passedTerm, 'passedterm')
-        const response = await Hotel_API.get()
+        const response = await Event_API.get('/events', {
+            params: {
+                keyword: passedTerm,
+                stateCode: 'NY'
+            }
+        })
             
-    
-        
+
         console.log(response.data._embedded.events)
+
         this.setState({
             events: response.data._embedded.events
         })
-        console.log(this.state.events, '-events')
+
     }
 
     render() {
