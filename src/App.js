@@ -16,7 +16,8 @@ class App extends React.Component {
         const response = await Event_API.get('/events', {
             params: {
                 keyword: passedTerm,
-                stateCode: 'NY'
+                stateCode: 'CA',
+                size: 200
             }
         })
             
