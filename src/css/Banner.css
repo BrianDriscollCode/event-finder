@@ -1,0 +1,25 @@
+/* Banner.js */
+
+.banner {
+
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.banner h1 {
+    margin-top: 4%;
+    align-self: center;
+}
+
+.banner .search_bar {
+
+    align-self: center;
+    margin-bottom: 4%;
+
+}
+
+/* SearchBar.js */ 
+

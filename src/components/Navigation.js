@@ -6,13 +6,13 @@ const Navigation = () => {
 
         <nav> 
 
-            <div>
+            <div className="header_image">
 
                 Concert Finder
 
             </div> 
 
-            <div>
+            <div className="navigation_links">
 
                 <ul>
 

@@ -3,6 +3,9 @@ import Navigation from './components/Navigation'
 import Banner from './components/Banner'
 import Content from './components/Content'
 import Event_API from './apis/Event_API'
+import "./css/App.css"
+import "./css/Banner.css"
+import "./css/Content.css"
 
 class App extends React.Component {
 
@@ -34,7 +37,7 @@ class App extends React.Component {
 
         return (
 
-            <div> 
+            <div className='main_body'> 
                 <Navigation />
                 <Banner onTermSubmit={this.onTermSubmit} /> {/* Function passed two levels: Banner -> SearchBar */}
                 <Content events={this.state.events} />

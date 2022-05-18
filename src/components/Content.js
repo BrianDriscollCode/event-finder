@@ -13,7 +13,7 @@ const Content = ( { events } ) => {
 
     console.log(renderedContent, "rendered before")
     
-    //This is an algorithm to remove repeated entries of events
+    //Remove repeated entries of events
     //based on name. Would like to upgrade so that it
     //uses the first 4 letters of a string for more accuracy
     if (renderedContent.length > 1) {
@@ -41,7 +41,7 @@ const Content = ( { events } ) => {
     
 
 
-    return <div> {renderedContent} </div>
+    return <div className="rendered_content"> {renderedContent} </div>
 
 }
 

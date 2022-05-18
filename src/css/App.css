@@ -1,0 +1,51 @@
+body {
+    margin: 0 0 0 0;
+}
+
+#root {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    padding-top: 0px;
+
+}
+
+.main_body {
+
+    display: flex;
+    flex-direction: column;
+    background-color: thistle;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 0px;
+    
+}
+
+/* Navigation */
+
+nav {
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header_image {
+
+    padding: 17px 0px 0px 30px
+    
+
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+nav li {
+
+    padding-right: 30px;
+
+}

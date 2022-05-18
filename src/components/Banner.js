@@ -6,9 +6,12 @@ const Banner = ( {onTermSubmit} ) => {
 
     return (
 
-        <div>
+        <div className='banner'>
             <h1> This is a banner </h1> 
-            <SearchBar onTermSubmit={onTermSubmit} /> 
+            <div className='search_bar'>
+                <SearchBar onTermSubmit={onTermSubmit} /> 
+            </div>
+            
         </div>
         
 

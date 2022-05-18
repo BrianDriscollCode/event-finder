@@ -1,0 +1,50 @@
+
+
+/* Content.js */
+
+.rendered_content {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+/* ContentCard.js */
+
+.content_card {
+
+    width:45%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 10px 0px 10px;
+}
+
+.content_card h2 {
+  
+   padding: 0px 15px 0px 15px;
+    
+}
+
+.content_title {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.content_images {
+
+    width: 70%;
+
+}
+
+.content_description {
+
+    width: 80%;
+    font-size: 10px;
+
+}
