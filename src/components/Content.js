@@ -27,7 +27,6 @@ const Content = ( { events } ) => {
                 if (currentName == renderedContent[n].props.name) {
 
                     renderedContent.splice(n,n);
-                    console.log('splice active')
 
                 }
 

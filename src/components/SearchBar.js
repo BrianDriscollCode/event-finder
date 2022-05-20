@@ -6,19 +6,20 @@ class SearchBar extends React.Component {
             
         term: "concert",
         open: false,
+        chosenState: 'NY',
         states_in_USA : [
 
-            'AZ',
-            'CA',
-            'NY',
-            'WA'
+            'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT',
+            'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN',
+            'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA',
+            'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV',
+            'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH',
+            'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN',
+            'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI',
+            'WY'
     
         ]
     } 
-
-
-    
-    
 
     //opens and closes drop down menu
     onOpen = () => {
@@ -33,6 +34,19 @@ class SearchBar extends React.Component {
 
         this.setState({ term: newTerm })
 
+    }
+
+    updateFormLocation = (location) => {
+
+        this.setState({ chosenState: location })
+        this.updateLocation(location)
+
+    }
+
+    updateLocation(userLocation) {
+
+        this.props.updateUserLocation(userLocation)
+        
     }
 
     onFormSubmit= (event) => {
@@ -66,13 +80,13 @@ class SearchBar extends React.Component {
                         <label className='label'> Select a state </label>
                         <div class={`ui selection dropdown ${this.state.open ? 'visible active' : ''}`}> 
                             <i className="dropdown icon" onClick={this.onOpen} > </i>
-                            <div className="text"> label </div>
+                            <div className="text"> {this.state.chosenState } </div>
                             <div className={`menu ${this.state.open ? 'visible transition' : ''}`}>
                                 {
 
                                     this.state.states_in_USA.map((state) => {
 
-                                        return <div className='item'> { state } </div>
+                                        return <div className='item' onClick={() => this.updateFormLocation(state)}> { state } </div>
 
                                     })
                                     

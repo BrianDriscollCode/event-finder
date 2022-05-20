@@ -10,8 +10,9 @@ import "./css/Content.css"
 class App extends React.Component {
 
     state = { 
-        searchTerm: '', 
-        events: []
+        userLocation: 'NY',
+        events: [],
+        eventType: ''
     } 
 
     componentDidMount() {
@@ -20,12 +21,24 @@ class App extends React.Component {
 
     }
 
+    updateUserLocation = async (userUpdatedLocation) => {
+
+        console.log('update user location run')
+        console.log(userUpdatedLocation)
+        await this.setState({ userLocation: userUpdatedLocation })
+        
+        this.onTermSubmit(this.state.eventType);
+
+    }
+
     onTermSubmit = async (passedTerm) => {
+
+        this.setState({ eventType: passedTerm })
 
         const response = await Event_API.get('/events', {
             params: {
                 keyword: passedTerm,
-                stateCode: 'CA',
+                stateCode: this.state.userLocation,
                 size: 200
             }
         })
@@ -45,7 +58,7 @@ class App extends React.Component {
 
             <div className='main_body'> 
                 <Navigation />
-                <Banner onTermSubmit={this.onTermSubmit} /> {/* Function passed two levels: Banner -> SearchBar */}
+                <Banner onTermSubmit={this.onTermSubmit} updateUserLocation={this.updateUserLocation} /> {/* Function passed two levels: Banner -> SearchBar */}
                 <Content events={this.state.events} />
             </div>
 

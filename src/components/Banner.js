@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 
-const Banner = ( {onTermSubmit} ) => {
+const Banner = ( {onTermSubmit, updateUserLocation} ) => {
 
 
     return (
@@ -9,9 +9,8 @@ const Banner = ( {onTermSubmit} ) => {
         <div className='banner'>
             <h1> This is a banner </h1> 
             <div className='search_bar'>
-                <SearchBar onTermSubmit={onTermSubmit} /> 
+                <SearchBar onTermSubmit={onTermSubmit} updateUserLocation={updateUserLocation} />
             </div>
-            
         </div>
         
 
