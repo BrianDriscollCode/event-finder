@@ -14,6 +14,12 @@ class App extends React.Component {
         events: []
     } 
 
+    componentDidMount() {
+
+        this.onTermSubmit('concert');
+
+    }
+
     onTermSubmit = async (passedTerm) => {
 
         const response = await Event_API.get('/events', {

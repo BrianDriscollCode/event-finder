@@ -2,8 +2,6 @@ import React, { useEffect } from 'react'
 
 const ContentCard = ( { id, name, info, images } ) => {
 
-    let description = ''    
-
     return (
 
         <div key={ id } className="content_card"> 
@@ -18,24 +16,18 @@ const ContentCard = ( { id, name, info, images } ) => {
                         return <img className="content_images" src={image.url} /> 
                     }
                     
-
                 })
             }
             
             <div className='content_title'>
-                <h2> { name } </h2>
+                <h2 className='title_h2'> { name } </h2>
             </div>
              
-            <p className='content_description'> 
+            <div className='content_description'> 
 
-            {info ? info: 
-            
-                "The user did not add a description to this event. That's fine! We are sure this is an awesome event that you should attend!"}
-            
-
-                
-                
-            </p>
+                <button> Learn more </button>
+        
+            </div>
 
         </div>
 
