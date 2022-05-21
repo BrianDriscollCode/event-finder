@@ -8,10 +8,15 @@ const Content = ( { events } ) => {
 
     renderedContent = events.map((event) => {
 
-            return <ContentCard id={event.id} name={event.name} info={event.info} images={event.images} />
+            return (
+                <ContentCard 
+                    id={'event' + event.id} 
+                    name={event.name} 
+                    info={event.info} 
+                    images={event.images} 
+                    />
+            )
     })
-
-    console.log(renderedContent, "rendered before")
     
     //Remove repeated entries of events
     //based on name. Would like to upgrade so that it
@@ -29,19 +34,11 @@ const Content = ( { events } ) => {
                     renderedContent.splice(n,n);
 
                 }
-
             }
-
         }
-
-        console.log(renderedContent, "rendered after")
-
     }
     
-
-
     return <div className="rendered_content"> {renderedContent} </div>
-
 }
 
 export default Content

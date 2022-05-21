@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const ContentCard = ( { id, name, info, images } ) => {
+const ContentCard = ( { id, name, info, images} ) => {
 
     return (
 
@@ -9,16 +9,17 @@ const ContentCard = ( { id, name, info, images } ) => {
             {
                 images.map((image) => {
 
+
                     if (image.ratio == '3_2' 
                         && image.height < 250 
                         && image.height > 50) 
                     {
-                        return <img className="content_images" src={image.url} /> 
+                        return <img key={'image' + id} className="content_images" src={image.url} /> 
                     }
                     
                 })
             }
-            
+
             <div className='content_title'>
                 <h2 className='title_h2'> { name } </h2>
             </div>

@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
         term: "concert",
         open: false,
         chosenState: 'NY',
-        states_in_USA : [
+        states_in_USA: [
 
             'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT',
             'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN',
@@ -18,7 +18,8 @@ class SearchBar extends React.Component {
             'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI',
             'WY'
     
-        ]
+        ],
+        formRef: React.createRef()
     } 
 
     //opens and closes drop down menu
@@ -30,6 +31,28 @@ class SearchBar extends React.Component {
 
     }
 
+    componentDidMount() {
+
+        document.body.addEventListener('click', (event) => {
+
+            if (this.state.formRef.current.contains(event.target)) {
+                return
+ 
+            } else {
+                this.setState({ open: false  })
+            }
+
+        })
+
+    }
+
+    updateReference = (reference) => {
+
+        this.props.updateFormReference(reference)
+        console.log('reference updates')
+
+    }
+
     updateTerm(newTerm) {
 
         this.setState({ term: newTerm })
@@ -38,6 +61,7 @@ class SearchBar extends React.Component {
 
     updateFormLocation = (location) => {
 
+        this.onOpen();
         this.setState({ chosenState: location })
         this.updateLocation(location)
 
@@ -73,12 +97,12 @@ class SearchBar extends React.Component {
                     </div>
                 </form>
 
-                <div className="ui form banner_dropdown">
+                <div  ref={this.state.formRef} className="ui form banner_dropdown">
 
                     <div className="field"> 
 
                         <label className='label'> Select a state </label>
-                        <div class={`ui selection dropdown ${this.state.open ? 'visible active' : ''}`}> 
+                        <div className={`ui selection dropdown ${this.state.open ? 'visible active' : ''}`} onClick={this.onOpen}> 
                             <i className="dropdown icon" onClick={this.onOpen} > </i>
                             <div className="text"> {this.state.chosenState } </div>
                             <div className={`menu ${this.state.open ? 'visible transition' : ''}`}>
@@ -86,7 +110,7 @@ class SearchBar extends React.Component {
 
                                     this.state.states_in_USA.map((state) => {
 
-                                        return <div className='item' onClick={() => this.updateFormLocation(state)}> { state } </div>
+                                        return <div className='item' key={state} onClick={() => this.updateFormLocation(state)}> { state } </div>
 
                                     })
                                     

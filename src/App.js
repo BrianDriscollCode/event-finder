@@ -12,7 +12,7 @@ class App extends React.Component {
     state = { 
         userLocation: 'NY',
         events: [],
-        eventType: ''
+        eventType: '',
     } 
 
     componentDidMount() {
@@ -23,8 +23,6 @@ class App extends React.Component {
 
     updateUserLocation = async (userUpdatedLocation) => {
 
-        console.log('update user location run')
-        console.log(userUpdatedLocation)
         await this.setState({ userLocation: userUpdatedLocation })
         
         this.onTermSubmit(this.state.eventType);
@@ -42,9 +40,6 @@ class App extends React.Component {
                 size: 200
             }
         })
-            
-
-        console.log(response.data._embedded.events)
 
         this.setState({
             events: response.data._embedded.events
@@ -56,9 +51,12 @@ class App extends React.Component {
 
         return (
 
-            <div className='main_body'> 
+            <div className='main_body' onClick={this.closeDropdown} > 
                 <Navigation />
-                <Banner onTermSubmit={this.onTermSubmit} updateUserLocation={this.updateUserLocation} /> {/* Function passed two levels: Banner -> SearchBar */}
+                <Banner 
+                    onTermSubmit={this.onTermSubmit} 
+                    updateUserLocation={this.updateUserLocation}
+                /> {/* Function passed two levels: Banner -> SearchBar */}
                 <Content events={this.state.events} />
             </div>
 
