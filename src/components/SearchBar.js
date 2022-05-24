@@ -40,6 +40,7 @@ class SearchBar extends React.Component {
  
             } else {
                 this.setState({ open: false  })
+                console.log('component did mount runs')
             }
 
         })
