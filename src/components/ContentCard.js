@@ -26,7 +26,7 @@ const ContentCard = ( { id, name, info, images} ) => {
              
             <div className='content_description'> 
 
-                <button> Learn more </button>
+                <button class="event_buttons"> Learn more </button>
         
             </div>
 

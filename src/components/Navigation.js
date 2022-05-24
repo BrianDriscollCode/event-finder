@@ -8,7 +8,7 @@ const Navigation = () => {
 
             <div className="header_image">
 
-                Concert Finder
+                EVENT FINDER
 
             </div> 
 
@@ -16,8 +16,8 @@ const Navigation = () => {
 
                 <ul>
 
-                    <li> <a> Home </a> </li>
-                    <li> <a> About </a> </li>
+                    <li> <a> HOME </a> </li>
+                    <li> <a> ABOUT </a> </li>
 
                 </ul>    
                 

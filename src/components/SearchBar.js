@@ -91,6 +91,7 @@ class SearchBar extends React.Component {
                     <div className='field'>
                         <label className='label'> Search the type of event ('concert' is recommended) : </label>
                         <input 
+                            className='event_input'
                             type="text" 
                             value={this.state.term} 
                             onChange={(e) => this.updateTerm(e.target.value)} 
@@ -103,7 +104,7 @@ class SearchBar extends React.Component {
                     <div className="field"> 
 
                         <label className='label'> Select a state </label>
-                        <div className={`ui selection dropdown ${this.state.open ? 'visible active' : ''}`} onClick={this.onOpen}> 
+                        <div id="dropdown_input" className={` ui selection dropdown ${this.state.open ? 'visible active' : ''}`} onClick={this.onOpen}> 
                             <i className="dropdown icon" onClick={this.onOpen} > </i>
                             <div className="text"> {this.state.chosenState } </div>
                             <div className={`menu ${this.state.open ? 'visible transition' : ''}`}>

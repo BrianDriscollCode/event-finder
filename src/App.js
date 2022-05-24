@@ -89,8 +89,7 @@ class App extends React.Component {
         return (
 
             <div className='main_body' onClick={this.closeDropdown} >
-                <button onClick={this.printEvent}> content </button> 
-                <Navigation />
+                {/*<button onClick={this.printEvent}> content </button>*/} 
                 <Banner 
                     onTermSubmit={this.onTermSubmit} 
                     updateUserLocation={this.updateUserLocation}

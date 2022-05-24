@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchBar from './SearchBar'
+import Navigation from './Navigation'
 
 const Banner = ( {onTermSubmit, updateUserLocation, updateFormReference } ) => {
 
@@ -7,7 +8,10 @@ const Banner = ( {onTermSubmit, updateUserLocation, updateFormReference } ) => {
     return (
 
         <div className='banner'>
-            <h1> This is a banner </h1> 
+            <Navigation />
+        
+                <h1> FIND YOUR NEXT EXPERIENCE </h1> 
+          
             <div className='search_bar'>
                 <SearchBar 
                     onTermSubmit={onTermSubmit} 
