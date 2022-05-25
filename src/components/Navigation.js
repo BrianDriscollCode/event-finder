@@ -11,18 +11,6 @@ const Navigation = () => {
                 EVENT FINDER
 
             </div> 
-
-            <div className="navigation_links">
-
-                <ul>
-
-                    <li> <a> HOME </a> </li>
-                    <li> <a> ABOUT </a> </li>
-
-                </ul>    
-                
-            </div> 
-
         </nav>
 
     )

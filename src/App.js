@@ -3,10 +3,13 @@ import Navigation from './components/Navigation'
 import Banner from './components/Banner'
 import Content from './components/Content'
 import Event_API from './apis/Event_API'
+import Get_Attraction from './apis/Get_Attraction'
 import Event from "./components/Event"
 import "./css/App.css"
 import "./css/Banner.css"
 import "./css/Content.css"
+import "./css/Event.css"
+
 
 class App extends React.Component {
 
@@ -14,16 +17,27 @@ class App extends React.Component {
         userLocation: 'NY',
         events: [],
         eventType: '',
+        content: '',
+
         showEvent: false,
-        content: ''
+        eventObject: []
     } 
 
     setContent = () => {
 
         if (this.state.events !== 'undefined') {
-            return this.setState({content: <Content events={this.state.events} /> }) 
+            return this.setState({content: <Content 
+                    events={this.state.events} 
+                    onLearnMore={this.onLearnMore}
+                    />
+                    
+            }) 
         } else {
-            return this.setState({ content: <div> no content</div> })
+            return this.setState({ content: <div className='no_events_return'> 
+            
+                <h2> No events have been found... sorry! </h2>
+            
+            </div> })
         }
 
     }
@@ -38,13 +52,15 @@ class App extends React.Component {
 
         await this.setState({ userLocation: userUpdatedLocation })
         
-        this.onTermSubmit(this.state.eventType);
+        //this.onTermSubmit(this.state.eventType);
 
     }
 
     onTermSubmit = async (passedTerm) => {
 
-        this.setState({ eventType: passedTerm })
+        this.setState({ 
+            eventType: passedTerm,
+            showEvent: false, })
 
         const response = await Event_API.get('/events', {
             params: {
@@ -61,7 +77,7 @@ class App extends React.Component {
         if (typeof(response.data?._embedded?.events) !== 'undefined') {
 
             this.setState({
-                events: response.data._embedded.events
+                events: response.data._embedded.events,
             })
 
         } else {
@@ -73,6 +89,24 @@ class App extends React.Component {
         
 
         this.setContent()
+
+    }
+
+    onGoBack = () => {
+
+        console.log('hey on goback')
+        this.setState({ showEvent: false})
+
+    }
+
+    onLearnMore = async (passedID) => {
+
+        console.log('ran onLearnMore', passedID)
+
+        const response = await Get_Attraction.get(`/events/${passedID}`)
+        this.setState({eventObject: response})
+        this.setState({showEvent: true})
+        
 
     }
 
@@ -96,7 +130,7 @@ class App extends React.Component {
                 /> {/* Function passed two levels: Banner -> SearchBar */}
                 
                 {
-                    this.state.showEvent ? <Event /> : this.state.content
+                    this.state.showEvent ? <Event eventInfo={this.state.eventObject} onGoBack={this.onGoBack} /> : this.state.content
                 }
                 
             </div>

@@ -1,7 +1,5 @@
 /* Banner.js */
 
-
-
 .banner {
 
     width:100%;
@@ -17,6 +15,14 @@
 
 }
 
+.header_image {
+
+    padding: 20px 0px 0px 22px;
+    font-size: 25px;
+    
+
+}
+
 nav a {
     color: white;
 }
@@ -24,18 +30,20 @@ nav a {
 .banner h1 {
     margin-top: 4%;
     align-self: center;
+    font-size: 60px;
 }
 
 .banner .search_bar {
 
     align-self: center;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
 
 }
 
 .banner_dropdown {
 
-    width: 50% !important
+    width: 50% !important;
+    margin-top: 5px;
 
 }
 
@@ -46,26 +54,138 @@ nav a {
 }
 
 .ui.form {
-    font-size: .8em !important;
+    font-size: 1.5em !important;
+}
+
+.ui.dropdown .menu {
+    font-size: 1.2em !important;
+}
+
+.item {
+    font-size: 1.2em !important;
 }
 
 .event_input {
 
-    height: 30px;
+    height: 55px;
 
 }
 
 .label {
+    font-size: 20px !important;
     text-align: left;
 }
 
+.search_button_container {
+    display: flex;
+    justify-content: center;
+}
+
+.search_button {
+
+    width: 80%;
+    height: 80px;
+    margin: 30px 0 0 0;
+    color: white;
+    font-size: 25px;
+    background-color: rgb(16, 128, 255);
+    border-radius: 20px;
+    border: none;
+    align-self: center;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+}
+
+.button_hover:hover {
+
+    background-color: #464646;
+
+}
+
+
 /* responsive edits */ 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 915px) {
+
+    .header_image {
+
+        padding: 20px 0px 0px 22px;
+        font-size: 20px;
+        
+    
+    }
+
+    .banner h1 {
+        font-size: 35px;
+    }
 
     .banner {
         text-align: center;
     }
 
+    .ui.form {
+        font-size: 1em !important;
+    }
+    
+    .ui.dropdown .menu {
+        font-size: 1em !important;
+    }
+    
+    .item {
+        font-size: 1em !important;
+    }
 
+    .event_input {
+
+        height: 45px;
+    
+    }
+
+    .label {
+        font-size: 15px !important;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 465px) {
+
+    .header_image {
+
+        padding: 20px 0px 0px 22px;
+        font-size: 15px;
+        
+    
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .banner {
+        text-align: center;
+    }
+
+    .ui.form {
+        font-size: 1em !important;
+    }
+    
+    .ui.dropdown .menu {
+        font-size: 1em !important;
+    }
+    
+    .item {
+        font-size: 1em !important;
+    }
+
+    .event_input {
+
+        height: 30px;
+    
+    }
+    .label {
+        font-size: 15px !important;
+        text-align: center;
+    }
+    
 }

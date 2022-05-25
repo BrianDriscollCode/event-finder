@@ -24,10 +24,7 @@ class SearchBar extends React.Component {
 
     //opens and closes drop down menu
     onOpen = () => {
-
-        console.log('open run before')
         this.setState( { open: !this.state.open } )
-        console.log('open is run')
 
     }
 
@@ -40,31 +37,51 @@ class SearchBar extends React.Component {
  
             } else {
                 this.setState({ open: false  })
-                console.log('component did mount runs')
+
             }
 
-        })
+        })        
+
+
+
 
     }
 
     updateReference = (reference) => {
 
         this.props.updateFormReference(reference)
-        console.log('reference updates')
 
     }
 
     updateTerm(newTerm) {
 
-        this.setState({ term: newTerm })
-
+        this.setState({ term: newTerm })      
+        //this.setManualTimeout();          
+        
     }
+
+    // setManualTimeout() {
+
+    //     if (this.timeoutId) {
+    //         clearInterval(this.timeoutId)
+    //         console.log('clear is run')
+    //     }
+
+    //     this.timeoutId = setInterval(
+    //         () => this.props.onTermSubmit(this.state.term),
+    //         400
+            
+    //     );
+
+    //     console.log('manual run')
+
+    // }
 
     updateFormLocation = (location) => {
 
         this.onOpen();
         this.setState({ chosenState: location })
-        this.updateLocation(location)
+        this.updateLocation(location) // will update automatically if not commented out when switching states
 
     }
 
@@ -122,7 +139,24 @@ class SearchBar extends React.Component {
 
                     </div>
 
+                    
+
                 </div> 
+
+
+                <div class="search_button_container">
+
+                    <button
+                        styles={{ fontSize: '40px' }}
+                        onClick={this.onFormSubmit}
+                        className="search_button button_hover"
+                        > 
+                        Search 
+                    </button>
+
+                </div>
+                
+
 
             </div>
 

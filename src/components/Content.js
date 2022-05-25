@@ -1,7 +1,7 @@
 import React from 'react'
 import ContentCard from './ContentCard'
 
-const Content = ( { events } ) => {
+const Content = ( { events, onLearnMore } ) => {
 
     let renderedContent = ''   
     let splicePosition = [] 
@@ -10,10 +10,11 @@ const Content = ( { events } ) => {
 
             return (
                 <ContentCard 
-                    id={'event' + event.id} 
+                    id={event.id} 
                     name={event.name} 
                     info={event.info} 
                     images={event.images} 
+                    onLearnMore={onLearnMore}
                     />
             )
     })
