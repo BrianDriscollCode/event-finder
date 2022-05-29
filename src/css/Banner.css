@@ -3,15 +3,11 @@
 .banner {
 
     width:100%;
-    background-color: hsl(0,0%,0%, 0.3);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.5)), url("../images/concert.jpg");
-    background-attachment: fixed;
-    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: white;
+    background-color: rgba(0, 0, 0, 0.4);;
 
 }
 
@@ -20,6 +16,15 @@
     padding: 20px 0px 0px 22px;
     font-size: 25px;
     
+
+}
+
+.video_player {
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 
 }
 

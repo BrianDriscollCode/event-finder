@@ -9,6 +9,9 @@
     justify-content: center;
     padding-bottom: 55px;
 
+    background: rgb(38,38,40);
+background: linear-gradient(135deg, rgba(38,38,40,1) 70%, rgba(58,72,73,1) 100%, rgba(0,241,255,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+    z-index: 1;
 }
 
 /* ContentCard.js */

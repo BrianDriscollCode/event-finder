@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import SearchBar from './SearchBar'
 import Navigation from './Navigation'
+import Video from '../video/concertv2.mp4'
 
 const Banner = ( {onTermSubmit, updateUserLocation, updateFormReference } ) => {
 
+    const vidRef = useRef();
+
+    useEffect(() => { vidRef.current.play(); },[]);
 
     return (
 
@@ -18,6 +22,8 @@ const Banner = ( {onTermSubmit, updateUserLocation, updateFormReference } ) => {
                     updateUserLocation={updateUserLocation}
                 />
             </div>
+
+            <video ref={ vidRef } src={Video} className="video_player" autoPlay={true} loop controls = ''> </video>
         </div>
         
 
