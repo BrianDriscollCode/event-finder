@@ -13,7 +13,7 @@ const Event = ( {eventInfo, onGoBack} ) => {
     }
 
     return (
-    <div className='giveEventMargin eventInfo'> 
+    <div className='eventInfo'> 
         <div className='giveEventMargin eventContainer'>
 
         <div class="back_option">

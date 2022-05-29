@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     margin-bottom: 20px;
+    padding: 40px 0 40px 0;
     background: linear-gradient(135deg, rgba(38,38,40,1) 70%, rgba(58,72,73,1) 100%, rgba(0,241,255,1) 100%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
 }
 

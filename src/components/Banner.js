@@ -23,7 +23,7 @@ const Banner = ( {onTermSubmit, updateUserLocation, updateFormReference } ) => {
                 />
             </div>
 
-            <video ref={ vidRef } src={Video} className="video_player" autoPlay={true} loop controls = ''> </video>
+            <video ref={ vidRef } src={Video} className="video_player" autoPlay={true} loop muted> </video>
         </div>
         
 
