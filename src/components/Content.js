@@ -10,7 +10,8 @@ const Content = ( { events, onLearnMore } ) => {
 
             return (
                 <ContentCard 
-                    id={event.id} 
+                    id={event.id}
+                    key={'key' + event.id} 
                     name={event.name} 
                     info={event.info} 
                     images={event.images} 

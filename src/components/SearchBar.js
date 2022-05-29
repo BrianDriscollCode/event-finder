@@ -144,7 +144,7 @@ class SearchBar extends React.Component {
                 </div> 
 
 
-                <div class="search_button_container">
+                <div className="search_button_container">
 
                     <button
                         styles={{ fontSize: '40px' }}

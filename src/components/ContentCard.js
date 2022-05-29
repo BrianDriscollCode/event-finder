@@ -61,7 +61,7 @@ const ContentCard = ( { id, name, info, images, onLearnMore} ) => {
             <div className='content_description'> 
 
                 <button 
-                    class="event_buttons" 
+                    className="event_buttons" 
                     onClick={() => onLearnMore(id)}
                     style={button}
                     onMouseOver={setButtonHover}

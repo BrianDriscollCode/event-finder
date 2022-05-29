@@ -3,8 +3,6 @@ import React from 'react'
 
 const Event = ( {eventInfo, onGoBack} ) => {
 
-    console.log(onGoBack)
-
 
     const goToPage = () => {
 
@@ -16,7 +14,7 @@ const Event = ( {eventInfo, onGoBack} ) => {
     <div className='eventInfo'> 
         <div className='giveEventMargin eventContainer'>
 
-        <div class="back_option">
+        <div className="back_option">
             <label className='event_text_size'> Search for more events: </label>
             <button onClick={onGoBack} className="event_buttons" style={{marginLeft: '20px'}}>  Go back </button>
         </div>
