@@ -25,8 +25,9 @@
     right: 0;
     bottom: 0;
     width:100%;
+    bottom: 300px;
+    height: auto;
     z-index: -1;
-    background-size: cover;
 
 }
 
@@ -112,6 +113,16 @@ nav a {
 
 /* responsive edits */ 
 
+@media screen and (max-width: 1300px) {
+
+    .video_player {
+
+        width: auto;
+
+    }
+
+}
+
 @media screen and (max-width: 915px) {
 
     .header_image {
@@ -120,6 +131,12 @@ nav a {
         font-size: 20px;
         
     
+    }
+
+    .video_player {
+
+        bottom: 150px
+
     }
 
     .banner h1 {
@@ -193,6 +210,31 @@ nav a {
     .label {
         font-size: 15px !important;
         text-align: center;
+    }
+
+    .search_button {
+        height: 45px;
+    }
+    
+}
+
+@media screen and (max-width: 350px) {
+
+    .video_player {
+
+        right: -100px;
+        bottom: -200px;
+    }
+    
+}
+
+
+@media screen and (max-width: 290px) {
+
+    .video_player {
+
+        right: 0;
+        bottom: -200px;
     }
     
 }
